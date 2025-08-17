@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MakeCodeEasy - From Classroom to Career</title>
+    <link rel="icon" type="image/x-icon" href="images/makecodeeasy.jpeg" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      /* 🌌 Dark theme custom styling for MakeCodeEasy */ /* Global Styles */
+      body {
+        background-color: #0d1117;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      } /* Home Section with Professional Gradient */
+      #home {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: 80px; /* Account for fixed navbar */
+      }
+      #home::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(120, 119, 198, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 119, 198, 0.3) 0%,
+            transparent 50%
+          );
+        z-index: 1;
+      }
+      #home .container {
+        position: relative;
+        z-index: 2;
+      } /* Gradient Glow Button */
+      .btn-glow {
+        background: linear-gradient(45deg, #ff6b6b, #f94d6a, #f06595);
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+      }
+      .btn-glow:hover {
+        transform: translateY(-2px) scale(1.05);
+        background: linear-gradient(45deg, #4facfe, #00f2fe, #43e97b);
+        box-shadow: 0 8px 30px rgba(79, 172, 254, 0.4);
+      } /* Gradient Button */
+      .btn-gradient {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+      }
+      .btn-gradient:hover {
+        background: linear-gradient(45deg, #43e97b, #38f9d7);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
+      }
+      .lead {
+        color: #e1e8ff;
+        font-weight: 500;
+        font-size: 1.2rem;
+      } /* Navbar Styling */
+      .navbar {
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.9) !important;
+      }
+      .navbar-nav .nav-link {
+        position: relative;
+        padding: 8px 16px;
+        border-radius: 8px;
+        color: #fff !important;
+        transition: all 0.3s ease-in-out;
+        font-weight: 500;
+      }
+      .navbar-nav .nav-link:hover {
+        border: 2px solid #00f2fe;
+        color: #00f2fe !important;
+        box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+      } /* Founder Card Enhanced */
+      .founder-box {
+        position: relative;
+        background: transparent; /* 👈 remove solid fill */
+        border-radius: 20px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .founder-box::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(#00f2fe, #4facfe, #00ffcc, #00f2fe);
+        animation: spin 6s linear infinite;
+        z-index: 0; /* stays behind content */
+      }
+
+      .founder-box::after {
+        content: "";
+        position: absolute;
+        inset: 3px; /* 👈 shrink so gradient border is visible */
+        border-radius: 16px;
+        background: #1e293b;
+        z-index: 1;
+      }
+
+      .founder-box img,
+      .founder-box h4,
+      .founder-box p,
+      .founder-box .d-flex {
+        position: relative;
+        z-index: 3; /* 👈 ensure content is above everything */
+      }
+
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .founder-photo {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 0 30px rgba(0, 242, 254, 0.6),
+          inset 0 0 20px rgba(0, 242, 254, 0.2);
+        transition: all 0.3s ease;
+      }
+      .founder-photo:hover {
+        box-shadow: 0 0 50px rgba(0, 242, 254, 0.8),
+          inset 0 0 30px rgba(0, 242, 254, 0.3);
+        transform: scale(1.05);
+      } /* Feature Cards */
+      .feature-card {
+        background: linear-gradient(145deg, #161b22, #1a1a1a);
+        border: 2px solid transparent;
+        border-radius: 15px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        height: 100%;
+      }
+      .feature-card:hover {
+        border: 2px solid #00ffcc;
+        box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+        transform: translateY(-10px);
+      }
+      .feature-card .icon {
+        color: #00ffcc;
+        font-size: 3rem !important;
+      } /* Course Cards */
+      .course-card {
+        background: linear-gradient(145deg, #1a1f2e, #16213e);
+        border: 2px solid transparent;
+        border-radius: 15px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+      }
+      .course-card:hover {
+        border: 2px solid #4facfe;
+        box-shadow: 0 0 30px rgba(79, 172, 254, 0.4);
+        transform: translateY(-8px) scale(1.02);
+        text-decoration: none;
+        color: inherit;
+      }
+      .course-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      } /* Section Headers */
+      .section-header {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 3rem;
+      }
+      .section-header::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        border-radius: 2px;
+      } /* Professional Footer */
+      #footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        border-top: 1px solid #334155;
+      }
+      .query-form {
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+        border: 1px solid #334155;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+      .form-control {
+        background-color: #334155 !important;
+        border: 1px solid #475569 !important;
+        color: #e2e8f0 !important;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      .form-control:focus {
+        background-color: #475569 !important;
+        border-color: #00f2fe !important;
+        box-shadow: 0 0 0 0.2rem rgba(0, 242, 254, 0.25) !important;
+        color: #ffffff !important;
+      }
+      .form-label {
+        color: #cbd5e1;
+        font-weight: 500;
+        margin-bottom: 8px;
+      } /* Responsive Design */
+      @media (max-width: 768px) {
+        #home {
+          min-height: 80vh;
+          padding-top: 60px;
+        }
+        .founder-box {
+          max-width: 280px;
+        }
+        .founder-photo {
+          width: 120px;
+          height: 120px;
+        }
+        #home .display-3 {
+          font-size: 2.5rem;
+        }
+        #home .display-6 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  </head>
+  <body class="bg-dark text-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+          <span>
+            <img
+              src="images/makecodeeasy.jpeg"
+              alt="MakeCodeEasy Logo"
+              class="img-fluid"
+              style="height: 40px; width: auto"
+            />
+          </span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#courses">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#placement">Placement</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Home Section with Professional Gradient -->
+    <section id="home" class="d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p class="lead mb-3">Our slogan:</p>
+            <h1 class="display-3 fw-bold text-white mb-3">
+              "From Classroom to Career 🚀
+            </h1>
+            <h2 class="display-6 fw-bold text-white mb-4">We make IT easy."</h2>
+            <button class="btn btn-glow btn-lg me-3">Get Started</button>
+            <button class="btn btn-gradient btn-lg">Explore Courses</button>
+          </div>
+        </div>
+      </div>
+      <br />
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5" style="background-color: #0f172a">
+      <br /><br />
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <span
+              class="badge rounded-pill px-3 py-2 mb-3"
+              style="
+                background: linear-gradient(90deg, #ff8a00, #e52e71);
+                color: #fff;
+              "
+            >
+              Meet Our Founder
+            </span>
+            <h2 class="fw-bold mb-4">
+              Hi, I'm <span style="color: #f1c40f">Sayan</span>
+              <span style="color: #00ffcc">Chakraborty</span>
+            </h2>
+            <h4 class="fw-semibold mb-4 text-white">
+              <span id="typed-text"></span>
+            </h4>
+            <p style="color: #cbd5e1; line-height: 1.8; font-size: 1.1rem">
+              Coming from a passionate Computer Science background and a tech
+              enthusiast with a vision to make coding and skill development
+              accessible to everyone. With a deep interest in programming,
+              problem-solving, and modern educational technologies, I founded
+              <b style="color: #f1c40f">MakeCodeEasy</b> to guide learners from
+              their first line of code to landing their dream job.
+            </p>
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <h5 class="text-white">
+                  <i class="bi bi-target text-success"></i> Mission
+                </h5>
+                <p style="color: #94a3b8">
+                  Simplify coding and career preparation for every student.
+                </p>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-white">
+                  <i class="bi bi-eye text-info"></i> Vision
+                </h5>
+                <p style="color: #94a3b8">
+                  Bridge the gap between classroom learning and industry
+                  requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Founder Box moved here -->
+          <div class="col-lg-4 text-center mt-5 mt-lg-0">
+            <div class="d-flex justify-content-center">
+              <div class="founder-box p-4">
+                <img
+                  src="images/founder-photo.jpg"
+                  alt="Sayan Chakraborty"
+                  class="founder-photo mb-3"
+                  onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'160\' viewBox=\'0 0 160 160\'><circle cx=\'80\' cy=\'80\' r=\'80\' fill=\'%23334155\'/><text x=\'80\' y=\'95\' font-size=\'80\' text-anchor=\'middle\' fill=\'%2300f2fe\'>👨‍💻</text></svg>'"
+                />
+                <h4 class="fw-bold text-white">SAYAN CHAKRABORTY</h4>
+                <p class="text-light mb-2">Founder & CEO • MakeCodeEasy</p>
+                <div class="d-flex justify-content-center gap-3 mt-3">
+                  <a href="#" class="text-decoration-none">
+                    <i
+                      class="bi bi-linkedin"
+                      style="color: #0077b5; font-size: 1.5rem"
+                    ></i>
+                  </a>
+                  <a href="#" class="text-decoration-none">
+                    <i
+                      class="bi bi-twitter"
+                      style="color: #1da1f2; font-size: 1.5rem"
+                    ></i>
+                  </a>
+                  <a href="#" class="text-decoration-none">
+                    <i
+                      class="bi bi-github"
+                      style="color: #333; font-size: 1.5rem"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Founder Box -->
+        </div>
+      </div>
+      <br /><br />
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5" style="background-color: #0d1117">
+      <br /><br />
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-header fw-bold text-white">Our Features</h2>
+          <p class="lead text-light">
+            Comprehensive learning solutions for your tech career
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4">
+              <div class="icon mb-3"><i class="bi bi-code-slash"></i></div>
+              <h4 class="text-white mb-3">Coding Practice</h4>
+              <p class="text-light">
+                Master DSA and real-world coding challenges with interactive
+                exercises.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4">
+              <div class="icon mb-3"><i class="bi bi-calculator"></i></div>
+              <h4 class="text-white mb-3">Aptitude Training</h4>
+              <p class="text-light">
+                Sharpen problem-solving and logical reasoning skills for
+                placements.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4">
+              <div class="icon mb-3">
+                <i class="bi bi-person-lines-fill"></i>
+              </div>
+              <h4 class="text-white mb-3">Mock Interviews</h4>
+              <p class="text-light">
+                Experience real interview scenarios with personalized feedback.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4">
+              <div class="icon mb-3"><i class="bi bi-lightbulb"></i></div>
+              <h4 class="text-white mb-3">Placement Guidance</h4>
+              <p class="text-light">
+                Get expert advice and strategies to crack your dream job.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </section>
+    <!-- Courses Section -->
+    <section id="courses" class="py-5" style="background-color: #1e293b">
+      <br /><br />
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-header fw-bold text-white">Our Courses</h2>
+          <p class="lead text-light">
+            Learn from industry experts with hands-on projects.
+          </p>
+        </div>
+        <!-- Programming Languages -->
+        <div class="mb-5">
+          <h3 class="text-white mb-4">
+            <i class="bi bi-code-square text-info"></i> Programming Languages
+          </h3>
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <a
+                href="https://www.python.org/"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-5">
+                  <img
+                    src="images/python.png"
+                    alt="Python"
+                    class="tech-logo"
+                    style="width: 80px; height: 80px"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-file-earmark-code course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">Python</h5>
+                <p class="text-light small">Versatile programming language</p>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a
+                href="https://en.cppreference.com/w/c"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-3">
+                  <img
+                    src="images/c.png"
+                    alt="C Programming"
+                    class="tech-logo"
+                    style="width: 80px; height: 80px"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-cpu course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">C Programming</h5>
+                <p class="text-light small">Foundation of programming</p>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a
+                href="https://cplusplus.com/"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-3">
+                  <img
+                    src="images/c++.png"
+                    alt="C++"
+                    class="tech-logo"
+                    style="width: 80px; height: 90px"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-gear-wide-connected course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">C++</h5>
+                <p class="text-light small">Object-oriented programming</p>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a
+                href="https://www.oracle.com/java/"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-3">
+                  <img
+                    src="images/java.png"
+                    alt="Java"
+                    class="tech-logo"
+                    style="width: 80px; height: 120px"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-cup-hot course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">Java</h5>
+                <p class="text-light small">Enterprise development</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Web Technologies -->
+        <div class="mb-5">
+          <h3 class="text-white mb-4">
+            <i class="bi bi-globe text-warning"></i> Web Technologies
+          </h3>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-3">
+                  <img
+                    src="images/html.png"
+                    alt="HTML5"
+                    class="tech-logo"
+                    style="width: 80px; height: 80px"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-filetype-html course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">HTML5</h5>
+                <p class="text-light small">Structure of web pages</p>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-3">
+                  <img
+                    src="images/css.png"
+                    alt="CSS3"
+                    class="tech-logo"
+                    style="width: 80px; height: 80px"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-palette course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">CSS3</h5>
+                <p class="text-light small">Styling and layout</p>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-3">
+                  <img
+                    src="images/js.png"
+                    alt="JavaScript"
+                    class="tech-logo"
+                    style="width: 80px; height: 80px"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-braces course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">JavaScript</h5>
+                <p class="text-light small">Interactive web development</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Core Computer Science -->
+        <div class="mb-5">
+          <h3 class="text-white mb-4">
+            <i class="bi bi-diagram-3 text-success"></i> Core CS Subjects
+          </h3>
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="course-card p-4 text-center">
+                <div class="course-icon"><i class="bi bi-diagram-2"></i></div>
+                <h5 class="text-white">DSA</h5>
+                <p class="text-muted small">Data Structures & Algorithms</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a
+                href="https://www.mysql.com/"
+                target="_blank"
+                class="course-card d-block p-4 text-center"
+              >
+                <div class="course-logo mb-3">
+                  <img
+                    src="images/mysql-logo.svg"
+                    alt="MySQL"
+                    class="tech-logo"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bi bi-database course-icon\'></i>'"
+                  />
+                </div>
+                <h5 class="text-white">DBMS</h5>
+                <p class="text-muted small">Database Management</p>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="course-card p-4 text-center">
+                <div class="course-icon"><i class="bi bi-graph-up"></i></div>
+                <h5 class="text-white">DAA</h5>
+                <p class="text-muted small">Design & Analysis of Algorithms</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="course-card p-4 text-center">
+                <div class="course-icon"><i class="bi bi-hdd-stack"></i></div>
+                <h5 class="text-white">Operating Systems</h5>
+                <p class="text-muted small">System fundamentals</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Aptitude -->
+        <div>
+          <h3 class="text-white mb-4">
+            <i class="bi bi-lightbulb text-danger"></i> Aptitude Training
+          </h3>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="course-card p-4 text-center">
+                <div class="course-icon"><i class="bi bi-puzzle"></i></div>
+                <h5 class="text-white">Logical Reasoning</h5>
+                <p class="text-muted small">Pattern recognition & logic</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="course-card p-4 text-center">
+                <div class="course-icon"><i class="bi bi-calculator"></i></div>
+                <h5 class="text-white">Quantitative</h5>
+                <p class="text-muted small">Mathematical problem solving</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="course-card p-4 text-center">
+                <div class="course-icon"><i class="bi bi-chat-text"></i></div>
+                <h5 class="text-white">Verbal Reasoning</h5>
+                <p class="text-muted small">Language & comprehension</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+    </section>
+    <!-- Placement Section -->
+    <section id="placement" class="py-5" style="background-color: #0f172a">
+      <br /><br />
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2 class="section-header fw-bold text-white">
+              Placement Assistance
+            </h2>
+            <p class="lead text-light mb-4">
+              Your success is our mission. We provide comprehensive placement
+              support.
+            </p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="me-3" style="color: #4facfe; font-size: 2rem">
+                    <i class="bi bi-file-earmark-text"></i>
+                  </div>
+                  <div>
+                    <h6 class="text-white mb-1">Resume Building</h6>
+                    <small class="text-light"
+                      >Professional resume templates</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="me-3" style="color: #00f2fe; font-size: 2rem">
+                    <i class="bi bi-person-video3"></i>
+                  </div>
+                  <div>
+                    <h6 class="text-white mb-1">Mock Interviews</h6>
+                    <small class="text-light"
+                      >Real-time interview practice</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="me-3" style="color: #43e97b; font-size: 2rem">
+                    <i class="bi bi-chat-dots"></i>
+                  </div>
+                  <div>
+                    <h6 class="text-white mb-1">Communication Skills</h6>
+                    <small class="text-light">Soft skills development</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="me-3" style="color: #f1c40f; font-size: 2rem">
+                    <i class="bi bi-compass"></i>
+                  </div>
+                  <div>
+                    <h6 class="text-white mb-1">Career Guidance</h6>
+                    <small class="text-light"
+                      >Personalized career roadmaps</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-gradient btn-lg mt-4">Learn More</button>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div style="font-size: 15rem; color: #334155">🎯</div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </section>
+    <!-- Professional Footer -->
+    <footer id="footer" class="bg-dark text-light pt-5">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Brand + Description -->
+          <div class="col-lg-4 col-md-6">
+            <h4 class="fw-bold mb-3">
+              <img
+                src="images/makecodeeasy.jpeg"
+                alt="MakeCodeEasy"
+                style="height: 40px; width: auto"
+                class="me-2"
+              />
+              MakeCodeEasy
+            </h4>
+            <p class="text-light mb-0">
+              Empowering students to transition from classroom learning to
+              successful tech careers through comprehensive coding education and
+              placement support.
+            </p>
+          </div>
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#courses" class="text-light text-decoration-none"
+                  ><i class="me-2"></i>Courses</a
+                >
+              </li>
+              <li>
+                <a href="#placement" class="text-light text-decoration-none"
+                  ><i class="me-2"></i>Placement</a
+                >
+              </li>
+              <li>
+                <a href="#features" class="text-light text-decoration-none"
+                  ><i class="me-2"></i>Features</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="text-light text-decoration-none"
+                  ><i class="me-2"></i>About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="fw-bold mb-3">Contact Info</h5>
+            <p class="text-light mb-2">
+              <i class="bi bi-envelope-fill me-2"></i> info@makecodeeasy.com
+            </p>
+            <p class="text-light mb-2">
+              <i class="bi bi-telephone-fill me-2"></i> +91 98765 43210
+            </p>
+            <p class="text-light">
+              <i class="bi bi-geo-alt-fill me-2"></i> Kolkata, West Bengal,
+              India
+            </p>
+          </div>
+          <!-- Query Form -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="fw-bold mb-3">Have a Query?</h5>
+            <h6 class="fw-bold mb-3">Give us your feedback:</h6>
+            <form onsubmit="return handleQuery(event)" class="query-form">
+              <div class="mb-2">
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control form-control-sm"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control form-control-sm"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <textarea
+                  id="message"
+                  rows="2"
+                  class="form-control form-control-sm"
+                  placeholder="Message..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm w-100">
+                <i class="bi bi-send me-1"></i>Send
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Social Media & Bottom -->
+        <hr class="border-secondary my-4" />
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="text-light mb-0">
+              © 2025 MakeCodeEasy. All Rights Reserved.
+              <a href="#" class="text-light text-decoration-none ms-2"
+                >Privacy Policy</a
+              >
+              | <a href="#" class="text-light text-decoration-none">Terms</a>
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div
+              class="d-flex gap-3 justify-content-md-end justify-content-center"
+            >
+              <a href="#" style="color: #0077b5"
+                ><i class="bi bi-linkedin fs-5"></i
+              ></a>
+              <a href="#" style="color: #1da1f2"
+                ><i class="bi bi-twitter fs-5"></i
+              ></a>
+              <a href="#" style="color: #25d366"
+                ><i class="bi bi-whatsapp fs-5"></i
+              ></a>
+              <a href="#" style="color: #ff0000"
+                ><i class="bi bi-youtube fs-5"></i
+              ></a>
+              <a href="#" style="color: #e4405f"
+                ><i class="bi bi-instagram fs-5"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Signature -->
+        <div class="row mt-3">
+          <div class="col text-center">
+            <p class="text-light small mb-0">
+              Made with <span style="color: #e74c3c">❤️</span> by MakeCodeEasy
+              Team
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      //Typed.js Animation
+      var typed = new Typed("#typed-text", {
+        strings: [
+          "CEO and Founder of MakeCodeEasy",
+          "Bronze Medalist of IIT Bombay Campus Ambassador",
+          "Passionate Educator & Tech Mentor",
+          "Bridging Classroom to Career Gap",
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+
+      // Enhanced Form Submission Handler
+      function handleQuery(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Create a more professional response
+        let responseElement = document.getElementById("response");
+        if (!responseElement) {
+          responseElement = document.createElement("div");
+          responseElement.id = "response";
+          event.target.parentNode.appendChild(responseElement);
+        }
+        responseElement.innerHTML =
+          '<div class="alert alert-success" role="alert" style="background: linear-gradient(45deg, #43e97b, #38f9d7); border: none; color: white;">' +
+          '<i class="bi bi-check-circle-fill me-2"></i> ' +
+          `<strong>Thank you, ${name}!</strong><br> Your message has been received successfully. We'll get back to you at <strong>${email}</strong> within 24 hours.` +
+          "</div>";
+
+        // Reset form
+        event.target.reset();
+
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => {
+          responseElement.innerHTML = "";
+        }, 5000);
+
+        return false;
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add scroll effect to navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 100) {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.95)";
+        } else {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+        }
+      });
+
+      // Add loading animation to course links
+      document.querySelectorAll(".course-card[href]").forEach((card) => {
+        card.addEventListener("click", function (e) {
+          // Add a subtle loading effect
+          const icon = this.querySelector(".course-icon i");
+          if (icon) {
+            icon.style.animation = "spin 0.5s linear";
+            setTimeout(() => {
+              icon.style.animation = "";
+            }, 500);
+          }
+        });
+      });
+
+      // Add CSS animation for spin effect
+      const style = document.createElement("style");
+      style.textContent =
+        "@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }";
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
