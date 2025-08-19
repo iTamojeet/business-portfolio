@@ -8,7 +8,7 @@ body {
 
 /* Home Section with Professional Gradient */
 #home {
-  background: linear-gradient(69deg, #ffd900 0%, #ff4000 100%);
+  background: #000000;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -25,12 +25,12 @@ body {
   bottom: 0;
   background: radial-gradient(
       circle at 20% 80%,
-      rgba(120, 119, 198, 0.3) 0%,
+      rgba(57, 56, 120, 0.3) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(255, 119, 198, 0.3) 0%,
+      rgba(209, 67, 150, 0.3) 0%,
       transparent 50%
     );
   z-index: 1;
@@ -40,9 +40,29 @@ body {
   z-index: 2;
 }
 
+#about {
+  background: #000000;
+}
+
+#features {
+  background: #000000;
+}
+
+#courses {
+  background: #000000;
+}
+
+#placement {
+  background: #000000;
+}
+
+#footer {
+  background: #000000;
+}
+
 /* Gradient Glow Button */
 .btn-glow {
-  background: linear-gradient(45deg, #ff6b6b, #f94d6a, #f06595);
+  background: linear-gradient(45deg, #ed4eff, #ffcc00);
   border: none;
   color: white;
   padding: 12px 30px;
@@ -54,13 +74,13 @@ body {
 }
 .btn-glow:hover {
   transform: translateY(-2px) scale(1.05);
-  background: linear-gradient(45deg, #4facfe, #00f2fe, #43e97b);
+  background: linear-gradient(45deg, #0e52e6, #00ff88);
   box-shadow: 0 8px 30px rgba(79, 172, 254, 0.4);
 }
 
 /* Gradient Button */
 .btn-gradient {
-  background: linear-gradient(45deg, #0088ff, #6e00fe);
+  background: linear-gradient(45deg, #fffb00, #6e00fe);
   border: none;
   color: white;
   padding: 10px 25px;
@@ -70,7 +90,7 @@ body {
   box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
 }
 .btn-gradient:hover {
-  background: linear-gradient(45deg, #43e97b, #38f9d7);
+  background: linear-gradient(45deg, #0e52e6, #00ff88);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
 }
@@ -82,8 +102,7 @@ body {
 
 /* Navbar Styling */
 .navbar {
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-color: #000000 !important;
 }
 .navbar-nav .nav-link {
   position: relative;
@@ -103,7 +122,7 @@ body {
 .founder-box {
   margin-top: 20px;
   position: relative;
-  background: #1e293b;
+  background: #000000;
   border-radius: 20px;
   overflow: hidden;
   text-align: center;
@@ -134,7 +153,7 @@ body {
 
 /* Feature Cards */
 .feature-card {
-  background: linear-gradient(145deg, #161b22, #1a1a1a);
+  background: linear-gradient(145deg, #290761, #1a1a1a);
   border: 2px solid transparent;
   border-radius: 15px;
   transition: all 0.3s ease-in-out;
@@ -143,7 +162,7 @@ body {
 }
 .feature-card:hover {
   border: 2px solid #00ffcc;
-  box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+  box-shadow: 0 0 30px rgb(204, 255, 0);
   transform: translateY(-10px);
 }
 .feature-card .icon {
@@ -224,11 +243,11 @@ a:focus .course-img-icon {
 
 /* Professional Footer */
 #footer {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: #000000;
   border-top: 1px solid #334155;
 }
 .query-form {
-  background: linear-gradient(145deg, #1e293b, #0f172a);
+  background: #000000;
   border: 1px solid #334155;
   border-radius: 15px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -339,13 +358,13 @@ a:focus .course-img-icon {
   border: 1px solid rgba(0, 242, 254, 0.3);
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 30px rgb(0, 76, 85);
   backdrop-filter: blur(10px);
   transition: 0.3s;
 }
 .about-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0 25px rgb(0, 204, 214);
 }
 .about-card h4.card-title {
   font-weight: 700;
