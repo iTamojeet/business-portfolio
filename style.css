@@ -1,23 +1,8 @@
 /* 🌌 Dark theme custom styling for MakeCodeEasy */
 
-/* Universal Subtle Gradient Background for the Whole Page */
+/* Universal Solid Black Background */
 body {
-  background: linear-gradient(
-      120deg,
-      rgba(57, 56, 120, 0) 0%,
-      rgba(112, 18, 73, 0) 100%
-    ),
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(57, 56, 120, 0.18) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(209, 67, 150, 0.13) 0%,
-      transparent 60%
-    ),
-    #0d1117;
+  background: #000000 ;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
   background-attachment: fixed;
@@ -25,7 +10,7 @@ body {
 
 /* Global Styles */
 body {
-  background-color: #0d1117;
+  background-color: #000000;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -48,12 +33,12 @@ body {
   bottom: 0;
   background: radial-gradient(
       circle at 20% 80%,
-      rgba(57, 56, 120, 0) 0%,
+      rgba(9, 6, 167, 0.349) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(209, 67, 150, 0.11) 0%,
+      rgba(141, 10, 86, 0.384) 0%,
       transparent 50%
     );
   z-index: 1;
@@ -85,81 +70,6 @@ body {
 
 #footer {
   background: #000000;
-}
-
-/* Remove individual section backgrounds for a seamless look */
-#home,
-#about,
-#features,
-#courses,
-#placement,
-#feedback,
-#footer,
-#wiki {
-  background: transparent !important;
-}
-
-/* Remove section ::before overlays for a clean universal background */
-#home::before,
-#about::before,
-#features::before,
-#courses::before,
-#placement::before,
-#feedback::before,
-#footer::before,
-#wiki::before {
-  display: none !important;
-  content: none !important;
-}
-
-/* Subtle Gradient Background for All Main Sections */
-#about,
-#features,
-#courses,
-#placement,
-#feedback,
-#footer,
-#wiki {
-  background: linear-gradient(
-      120deg,
-      rgba(57, 56, 120, 0.13) 0%,
-      rgba(209, 67, 150, 0.10) 100%
-    ),
-    #000000;
-  position: relative;
-  z-index: 1;
-}
-
-/* Optional: Add a soft radial overlay for extra depth */
-#about::before,
-#features::before,
-#courses::before,
-#placement::before,
-#feedback::before,
-#footer::before,
-#wiki::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(
-    circle at 80% 10%,
-    rgba(67, 233, 123, 0.08) 0%,
-    transparent 60%
-  );
-}
-
-/* Ensure section content stays above the overlay */
-#about > .container,
-#features > .container,
-#courses > .container,
-#placement > .container,
-#feedback > .container,
-#footer > .container,
-#wiki > .container {
-  position: relative;
-  z-index: 2;
 }
 
 /* Gradient Glow Button */
@@ -578,4 +488,126 @@ a:focus .course-img-icon {
   .about-card {
     margin-bottom: 18px;
   }
+}
+
+/* ===== Extra Transitions & Animations Inspired by AiFiesta ===== */
+
+/* Fade & slide animation */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating hero text */
+.float-animation {
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Navbar underline grow */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Cards stagger hover */
+.feature-card, .course-card, .about-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.feature-card:hover, .course-card:hover, .about-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.4);
+}
+
+/* Social icon hover */
+.social-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icon:hover {
+  transform: rotate(12deg) scale(1.2);
+  color: #00f2fe !important;
+}
+
+/* ===== Extra Premium Animations ===== */
+
+/* Background subtle gradient glow */
+#home::before {
+  animation: gradientPulse 10s ease-in-out infinite alternate;
+}
+@keyframes gradientPulse {
+  0% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+  100% { opacity: 0.5; transform: scale(1); }
+}
+
+/* Section headers glow */
+.section-header {
+  animation: headerGlow 4s ease-in-out infinite alternate;
+}
+@keyframes headerGlow {
+  from { text-shadow: 0 0 8px #00f2fe55; }
+  to { text-shadow: 0 0 18px #43e97b88; }
+}
+
+/* Staggered card entrance */
+.stagger-fade {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.stagger-fade.visible {
+  animation: staggerIn 0.7s ease forwards;
+}
+@keyframes staggerIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button shine effect */
+.btn-glow, .btn-gradient, .neon-btn, .neon-btn-alt, .btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-glow::after, .btn-gradient::after, .neon-btn::after, .neon-btn-alt::after, .btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0), transparent);
+  transform: skewX(-25deg);
+}
+.btn-glow:hover::after, .btn-gradient:hover::after,
+.neon-btn:hover::after, .neon-btn-alt:hover::after, .btn-primary:hover::after {
+  animation: shine 0.75s forwards;
+}
+@keyframes shine {
+  100% { left: 125%; }
+}
+
+/* Typed text fade-in each update */
+#typed-text {
+  animation: fadeInTyped 1s ease;
+}
+@keyframes fadeInTyped {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
