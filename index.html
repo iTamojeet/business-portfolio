@@ -22,7 +22,7 @@
   <body class="bg-dark text-light">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
+      <div class="container w-100 justify-content-between px-4">
         <a class="navbar-brand d-flex" href="#home">
           <img
             src="images/makecodeeasy.jpeg"
@@ -40,7 +40,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto gap-2 gap-lg-4">
             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
@@ -54,6 +54,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#placement">Placement</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#feedback">Feedback</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#footer">Contact</a>
@@ -84,14 +87,14 @@
 
     <!-- About Section -->
     <section id="about" class="py-5">
+      <br /><br />
       <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center ">
           <h2 class="section-header fw-bold text-white">About Us</h2>
         </div>
-        <div class="row align-items-center">
-          <!-- Left Column: Intro + Mission/Vision/Difference -->
-          <div class="col-lg-8">
-            <p class="about-bio">
+        <div class="row">
+          <div class="col-12">
+            <p class="about-bio mt-4 text-center">
               Make Code Easy is an Ed-Tech platform designed to simplify coding,
               aptitude, resume building, mock interviews, and placement
               strategies for engineering students—especially those from
@@ -100,65 +103,71 @@
               structured, student-friendly learning ecosystem that takes you
               from absolute basics to advanced coding skills with confidence.
             </p>
-            <div class="mt-4 d-flex flex-wrap gap-3">
+            <div class="mt-4 d-flex flex-wrap gap-3 justify-content-center">
               <a href="#courses" class="btn neon-btn">Explore Courses</a>
               <a href="#" class="btn neon-btn-alt">DPP / Quiz</a>
               <a href="#" class="btn neon-btn-alt">Test Series</a>
             </div>
-            <div class="row g-4 mb-4 mt-1">
-              <div class="col">
-                <div class="about-card">
-                  <h4 class="card-title">
-                    <i class="bi bi-bullseye me-2"></i>Our Mission
-                  </h4>
-                  <p>
-                    To transform the way engineering students learn coding and
-                    aptitude by making it simple, structured, and accessible to
-                    all—especially those from non-computer science backgrounds.
-                  </p>
-                  <ul>
-                    <li>
-                      🎯 <b>Break the fear of coding</b> by starting from
-                      basics.
-                    </li>
-                    <li>
-                      🚀
-                      <b>Equip students with industry-ready skills</b> through
-                      projects.
-                    </li>
-                    <li>
-                      🌍 <b>Create equal opportunities</b> for every student.
-                    </li>
-                    <li>
-                      🤝 <b>Build a supportive learning community</b> with
-                      mentors & peers.
-                    </li>
-                  </ul>
-                  <p>
-                    💡 <b>Ultimate goal:</b> Empower every learner to become a
-                    confident coder, problem solver, and future innovator.
-                  </p>
-                </div>
-              </div>
-              <div class="col">
-                <div class="about-card">
-                  <h4 class="card-title">
-                    <i class="bi bi-stars me-2"></i>Our Vision
-                  </h4>
-                  <ul>
-                    <li>
-                      ✨ To make coding simple, affordable, and accessible.
-                    </li>
-                    <li>✨ To empower learners from non-CS backgrounds.</li>
-                    <li>
-                      ✨ To build a community-driven platform for innovation.
-                    </li>
-                    <li>✨ To shape the next generation of tech leaders.</li>
-                  </ul>
-                </div>
-              </div>
+          </div>
+        </div>
+        <br />
+        <div class="row justify-content-center">
+          <!-- Mission Card -->
+          <div class="col-lg-4 col-md-6 mb-4 d-flex">
+            <div class="about-card flex-fill">
+              <h4 class="card-title">
+                <i class="bi bi-bullseye me-2"></i>Our Mission
+              </h4>
+              <p>
+                To transform the way engineering students learn coding and
+                aptitude by making it simple, structured, and accessible to
+                all—especially those from non-computer science backgrounds.
+              </p>
+              <ul>
+                <li>
+                  🎯 <b>Break the fear of coding</b> by starting from
+                  basics.
+                </li>
+                <li>
+                  🚀
+                  <b>Equip students with industry-ready skills</b> through
+                  projects.
+                </li>
+                <li>
+                  🌍 <b>Create equal opportunities</b> for every student.
+                </li>
+                <li>
+                  🤝 <b>Build a supportive learning community</b> with
+                  mentors & peers.
+                </li>
+              </ul>
+              <p>
+                💡 <b>Ultimate goal:</b> Empower every learner to become a
+                confident coder, problem solver, and future innovator.
+              </p>
             </div>
-            <div class="about-card">
+          </div>
+          <!-- Vision Card -->
+          <div class="col-lg-4 col-md-6 mb-4 d-flex">
+            <div class="about-card flex-fill">
+              <h4 class="card-title">
+                <i class="bi bi-stars me-2"></i>Our Vision
+              </h4>
+              <ul>
+                <li>
+                  ✨ To make coding simple, affordable, and accessible.
+                </li>
+                <li>✨ To empower learners from non-CS backgrounds.</li>
+                <li>
+                  ✨ To build a community-driven platform for innovation.
+                </li>
+                <li>✨ To shape the next generation of tech leaders.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Difference Card -->
+          <div class="col-lg-4 col-md-12 mb-4 d-flex">
+            <div class="about-card flex-fill">
               <h4 class="card-title">
                 <i class="bi bi-lightning-charge me-2"></i>What Makes Us
                 Different
@@ -195,9 +204,31 @@
               </p>
             </div>
           </div>
-          <!-- Right Column: Founder Card (moved from Wiki for clarity) -->
-          <div class="col-lg-4">
-            <div class="founder-glow-card text-center p-4">
+        </div>
+      </div>
+    </section>
+
+    <!-- Wiki Section (now just intro and typed text) -->
+    <section id="wiki" class="py-5" style="background-color: #000000">
+      <div class="container">
+        <br /><br />
+        <div class="text-center mb-5">
+          <h2 class="section-header fw-bold text-white">Wiki</h2>
+          <div class="about-intro mb-5">
+            <span class="badge about-badge"
+              >Founder & CEO of Make Code Easy</span
+            >
+            <h1 class="about-title">
+              Hi, I'm <span class="highlight">Sayan Chakraborty</span>
+            </h1>
+            <h3 class="fw-bold mb-3 text-light">
+              <span id="typed-text"></span>
+            </h3>
+          </div>
+        </div>
+        <!-- Right Column: Founder Card (moved from Wiki for clarity) -->
+          <div class="container">
+            <div class="founder-box text-center p-5">
               <img
                 src="images/makecodeeasy.jpeg"
                 alt="Sayan Chakraborty"
@@ -209,14 +240,14 @@
               <h6 class="fw-bold text-white">
                 Background of Our Founder & CEO
               </h6>
-              <p class="text-light small">
+              <p class="text-light medium" style="-webkit-text-fill-color: #f1c40f;">
                 Coming from a biological science background, I faced significant
                 challenges when I first entered the world of coding in my 1st
                 year of engineering. With fear and uncertainty, I stepped into
                 my very first internship in Cyber Security & Ethical Hacking
                 from IIT Roorkee, which became a turning point in my journey.
               </p>
-              <ul class="text-light small text-start">
+              <ul class="text-light small justify-content-center list-unstyled">
                 <li>💻 <b>Google Data Analytics Intern</b></li>
                 <li>🎓 <b>Campus Ambassador at IIT Bombay</b></li>
                 <li>🏅 <b>Bronze Medalist at IIT Bombay</b></li>
@@ -263,42 +294,23 @@
                   style="font-size: 1.1rem"
                 >
                   <i class="bi bi-quote"></i> Our Slogan: “From Classroom to
-                  Career – We Make IT Easy!” <i class="bi bi-quote"></i>
+                  Career – We Make IT Easy! <i class="bi bi-quote" style="transform: rotate(180deg); display: inline-block; padding-top: 5px;"></i>
                 </span>
               </span>
               <div class="d-flex justify-content-center gap-3 mt-3">
                 <a href="#"><i class="bi bi-linkedin social-icon"></i></a>
-                <a href="#"><i class="bi bi-twitter social-icon"></i></a>
-                <a href="#"><i class="bi bi-github social-icon"></i></a>
+                <a href="#"><i class="bi bi-whatsapp social-icon"></i></a>
+                <a href="#"><i class="bi bi-envelope-fill social-icon"></i></a>
               </div>
             </div>
           </div>
-        </div>
       </div>
-    </section>
-
-    <!-- Wiki Section (now just intro and typed text) -->
-    <section id="wiki" class="py-5" style="background-color: #000000">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="section-header fw-bold text-white">Wiki</h2>
-          <div class="about-intro mb-5">
-            <span class="badge about-badge"
-              >Founder & CEO of Make Code Easy</span
-            >
-            <h1 class="about-title">
-              Hi, I'm <span class="highlight">Sayan Chakraborty</span>
-            </h1>
-            <h3 class="fw-bold mb-3 text-light">
-              <span id="typed-text"></span>
-            </h3>
-          </div>
-        </div>
-      </div>
+      <br /><br />
     </section>
 
     <!-- Features Section -->
     <section id="features" class="py-5" style="background-color: #000000">
+      <br /><br />
       <div class="container">
         <div class="text-center mb-5">
           <h2 class="section-header fw-bold text-white">Our Features</h2>
@@ -369,6 +381,18 @@
               <p class="text-light mb-0">
                 Learn strategies, best practices, and insider tips to crack
                 placements and internships.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-card text-center p-4 h-100">
+              <div class="icon mb-3" style="font-size: 2.5rem">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h4 class="text-white mb-2">24 x 7 Support</h4>
+              <p class="text-light mb-0">
+                Get assistance anytime, anywhere with our dedicated support
+                team.
               </p>
             </div>
           </div>
@@ -698,6 +722,57 @@
       </div>
       <br /><br />
     </section>
+    <!--Feedback Section-->
+    <section id="feedback">
+      <div class="container">
+        <br /><br />
+        <div class="col-lg-10 mx-auto text-center">
+            <h2 class="section-header fw-bold text-white">
+              Feedback
+            </h2>
+        </div>
+        <div class="d-flex justify-content-center text-center mb-5">
+          <div class="col-lg-3 col-md-6">
+            <h5 class="fw-bold mb-3">Have a Query?</h5>
+            <h6 class="fw-bold mb-3">Give us your feedback:</h6>
+            <form onsubmit="return handleQuery(event)" class="query-form">
+              <div class="mb-2">
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control form-control-sm"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control form-control-sm"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <textarea
+                  id="message"
+                  rows="2"
+                  class="form-control form-control-sm"
+                  placeholder="Message..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm w-100">
+                <i class="bi bi-send me-1"></i>Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </section>
+    
     <!-- Professional Footer -->
     <footer
       id="footer"
@@ -763,44 +838,7 @@
               India
             </p>
           </div>
-          <!-- Query Form -->
-          <div class="col-lg-3 col-md-6">
-            <h5 class="fw-bold mb-3">Have a Query?</h5>
-            <h6 class="fw-bold mb-3">Give us your feedback:</h6>
-            <form onsubmit="return handleQuery(event)" class="query-form">
-              <div class="mb-2">
-                <input
-                  type="text"
-                  id="name"
-                  class="form-control form-control-sm"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div class="mb-2">
-                <input
-                  type="email"
-                  id="email"
-                  class="form-control form-control-sm"
-                  placeholder="Your Email"
-                  required
-                />
-              </div>
-              <div class="mb-2">
-                <textarea
-                  id="message"
-                  rows="2"
-                  class="form-control form-control-sm"
-                  placeholder="Message..."
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-sm w-100">
-                <i class="bi bi-send me-1"></i>Send
-              </button>
-            </form>
-          </div>
-        </div>
+          
         <!-- Social Media & Bottom -->
         <hr class="border-secondary my-4" />
         <div class="row align-items-center">

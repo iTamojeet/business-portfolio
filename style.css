@@ -1,5 +1,28 @@
 /* 🌌 Dark theme custom styling for MakeCodeEasy */
 
+/* Universal Subtle Gradient Background for the Whole Page */
+body {
+  background: linear-gradient(
+      120deg,
+      rgba(57, 56, 120, 0) 0%,
+      rgba(112, 18, 73, 0) 100%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(57, 56, 120, 0.18) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(209, 67, 150, 0.13) 0%,
+      transparent 60%
+    ),
+    #0d1117;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
 /* Global Styles */
 body {
   background-color: #0d1117;
@@ -25,12 +48,12 @@ body {
   bottom: 0;
   background: radial-gradient(
       circle at 20% 80%,
-      rgba(57, 56, 120, 0.3) 0%,
+      rgba(57, 56, 120, 0) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(209, 67, 150, 0.3) 0%,
+      rgba(209, 67, 150, 0.11) 0%,
       transparent 50%
     );
   z-index: 1;
@@ -56,8 +79,87 @@ body {
   background: #000000;
 }
 
+#feedback{
+  background: #000000;
+}
+
 #footer {
   background: #000000;
+}
+
+/* Remove individual section backgrounds for a seamless look */
+#home,
+#about,
+#features,
+#courses,
+#placement,
+#feedback,
+#footer,
+#wiki {
+  background: transparent !important;
+}
+
+/* Remove section ::before overlays for a clean universal background */
+#home::before,
+#about::before,
+#features::before,
+#courses::before,
+#placement::before,
+#feedback::before,
+#footer::before,
+#wiki::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Subtle Gradient Background for All Main Sections */
+#about,
+#features,
+#courses,
+#placement,
+#feedback,
+#footer,
+#wiki {
+  background: linear-gradient(
+      120deg,
+      rgba(57, 56, 120, 0.13) 0%,
+      rgba(209, 67, 150, 0.10) 100%
+    ),
+    #000000;
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: Add a soft radial overlay for extra depth */
+#about::before,
+#features::before,
+#courses::before,
+#placement::before,
+#feedback::before,
+#footer::before,
+#wiki::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle at 80% 10%,
+    rgba(67, 233, 123, 0.08) 0%,
+    transparent 60%
+  );
+}
+
+/* Ensure section content stays above the overlay */
+#about > .container,
+#features > .container,
+#courses > .container,
+#placement > .container,
+#feedback > .container,
+#footer > .container,
+#wiki > .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* Gradient Glow Button */
@@ -94,6 +196,62 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
 }
+
+/* Neon Button */
+.neon-btn {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 0 16px #43e97b55;
+  transition: all 0.3s;
+}
+.neon-btn:hover {
+  background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+  color: #fff;
+  box-shadow: 0 0 32px #43e97b88;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Neon Button Alt */
+.neon-btn-alt {
+  background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
+  color: #232946;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 0 16px #ffd20055;
+  transition: all 0.3s;
+}
+.neon-btn-alt:hover {
+  background: linear-gradient(90deg, #ffd200 0%, #f7971e 100%);
+  color: #232946;
+  box-shadow: 0 0 32px #ffd20088;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Restore .btn-primary if needed */
+.btn-primary {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 12px 32px;
+  box-shadow: 0 0 16px #43e97b55;
+  transition: all 0.3s;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+  color: #fff;
+  box-shadow: 0 0 32px #43e97b88;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Lead Text */
 .lead {
   color: #e1e8ff;
   font-weight: 500;
@@ -103,6 +261,20 @@ body {
 /* Navbar Styling */
 .navbar {
   background-color: #000000 !important;
+  border-bottom: 1px solid #ffffff69;
+}
+.navbar .container {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  max-width: 100% !important;
+}
+.navbar-nav {
+  gap: 0.1rem;
+}
+@media (min-width: 992px) {
+  .navbar-nav {
+    gap: 2rem;
+  }
 }
 .navbar-nav .nav-link {
   position: relative;
@@ -113,8 +285,8 @@ body {
   font-weight: 500;
 }
 .navbar-nav .nav-link:hover {
-  border: 2px solid #00f2fe;
-  color: #00f2fe !important;
+  border: 2px solid #feed00;
+  color: #feed00 !important;
   box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
 
@@ -244,7 +416,7 @@ a:focus .course-img-icon {
 /* Professional Footer */
 #footer {
   background: #000000;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #ffffff69;
 }
 .query-form {
   background: #000000;
@@ -322,90 +494,88 @@ a:focus .course-img-icon {
   font-size: 1.05rem;
 }
 
-/* Neon Buttons */
-.neon-btn {
-  background: linear-gradient(45deg, #43e97b, #38f9d7);
-  border: none;
-  color: #000;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(67, 233, 123, 0.4);
-  transition: 0.3s ease-in-out;
-}
-.neon-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 0 30px rgba(67, 233, 123, 0.6);
-}
-.neon-btn-alt {
-  background: transparent;
-  border: 2px solid #00f2fe;
-  color: #00f2fe;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.neon-btn-alt:hover {
-  background: #00f2fe;
-  color: #000;
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
-}
-
 /* About Cards */
 .about-card {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(0, 242, 254, 0.3);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 30px rgb(0, 76, 85);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
+  background: linear-gradient(120deg, #181c2a 70%, #232946 100%);
+  border: 1.5px solid #232946;
+  border-radius: 18px;
+  padding: 28px 24px 22px 24px;
+  box-shadow: 0 6px 32px 0 rgba(67, 233, 123, 0.08), 0 1.5px 8px 0 #23294633;
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.3s, transform 0.3s;
+  margin-bottom: 0;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+
 .about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgb(0, 204, 214);
+  box-shadow: 0 0 32px 0 #43e97b88, 0 6px 32px 0 #00f2fe33;
+  transform: translateY(-6px) scale(1.02);
+  border-color: #43e97b;
 }
+
 .about-card h4.card-title {
-  font-weight: 700;
+  font-weight: 800;
   color: #00f2fe;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-.about-card p,
-.about-card ul {
+
+.about-card h4.card-title i {
+  font-size: 1.5rem;
+  color: #f1c40f;
+  filter: drop-shadow(0 0 6px #43e97b55);
+}
+
+.about-card p {
   color: #e0e7ef;
-  font-size: 0.95rem;
+  font-size: 1.07rem;
+  margin-bottom: 0.7rem;
+  font-weight: 500;
 }
+
 .about-card ul {
   list-style: none;
   padding-left: 0;
-  line-height: 1.6;
+  margin-bottom: 0.7rem;
 }
 
-/* Founder Neon Card */
-.founder-glow-card {
-  background: rgba(17, 24, 39, 0.85);
-  border-radius: 20px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
+.about-card ul li {
+  color: #b6eaff;
+  font-size: 1.02rem;
+  margin-bottom: 0.35rem;
+  padding-left: 0.2rem;
   position: relative;
-  box-shadow: 0 0 20px rgb(0, 254, 85);
+  font-weight: 500;
+  letter-spacing: 0.1px;
 }
 
-.founder-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
-  margin-top: 10px;
-}
-.social-icon {
-  font-size: 1.5rem;
-  color: #00f2fe;
-  transition: 0.3s;
-}
-.social-icon:hover {
+.about-card ul li b {
   color: #43e97b;
-  text-shadow: 0 0 15px #43e97b;
+  font-weight: 700;
+}
+
+.about-card:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .about-card {
+    min-height: unset;
+    padding: 20px 12px 16px 12px;
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-card {
+    margin-bottom: 18px;
+  }
 }
