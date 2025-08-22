@@ -2,7 +2,7 @@
 
 /* Universal Solid Black Background */
 body {
-  background: #000000 ;
+  background: #000000;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
   background-attachment: fixed;
@@ -64,7 +64,7 @@ body {
   background: #000000;
 }
 
-#feedback{
+#feedback {
   background: #000000;
 }
 
@@ -223,13 +223,11 @@ body {
   height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 30px rgba(0, 242, 254, 0.6),
-    inset 0 0 20px rgba(0, 242, 254, 0.2);
+  box-shadow: 0 0 30px rgb(242, 0, 255), inset 0 0 20px rgba(0, 242, 254, 0.2);
   transition: all 0.3s ease;
 }
 .founder-photo:hover {
-  box-shadow: 0 0 50px rgba(0, 242, 254, 0.8),
-    inset 0 0 30px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 0 50px rgb(242, 0, 255), inset 0 0 30px rgba(0, 242, 254, 0.3);
   transform: scale(1.05);
 }
 
@@ -243,7 +241,7 @@ body {
   height: 100%;
 }
 .feature-card:hover {
-  border: 2px solid #00ffcc;
+  border: 2px solid #b3ff00;
   box-shadow: 0 0 30px rgb(204, 255, 0);
   transform: translateY(-10px);
 }
@@ -508,8 +506,13 @@ a:focus .course-img-icon {
   animation: floatUpDown 4s ease-in-out infinite;
 }
 @keyframes floatUpDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 /* Navbar underline grow */
@@ -528,12 +531,16 @@ a:focus .course-img-icon {
 }
 
 /* Cards stagger hover */
-.feature-card, .course-card, .about-card {
+.feature-card,
+.course-card,
+.about-card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-.feature-card:hover, .course-card:hover, .about-card:hover {
+.feature-card:hover,
+.course-card:hover,
+.about-card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 0 40px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0 40px rgba(190, 254, 0, 0.4);
 }
 
 /* Social icon hover */
@@ -553,9 +560,18 @@ a:focus .course-img-icon {
   animation: gradientPulse 10s ease-in-out infinite alternate;
 }
 @keyframes gradientPulse {
-  0% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
-  100% { opacity: 0.5; transform: scale(1); }
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
 }
 
 /* Section headers glow */
@@ -563,8 +579,12 @@ a:focus .course-img-icon {
   animation: headerGlow 4s ease-in-out infinite alternate;
 }
 @keyframes headerGlow {
-  from { text-shadow: 0 0 8px #00f2fe55; }
-  to { text-shadow: 0 0 18px #43e97b88; }
+  from {
+    text-shadow: 0 0 8px #00f2fe55;
+  }
+  to {
+    text-shadow: 0 0 18px #43e97b88;
+  }
 }
 
 /* Staggered card entrance */
@@ -576,16 +596,30 @@ a:focus .course-img-icon {
   animation: staggerIn 0.7s ease forwards;
 }
 @keyframes staggerIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Button shine effect */
-.btn-glow, .btn-gradient, .neon-btn, .neon-btn-alt, .btn-primary {
+.btn-glow,
+.btn-gradient,
+.neon-btn,
+.neon-btn-alt,
+.btn-primary {
   position: relative;
   overflow: hidden;
 }
-.btn-glow::after, .btn-gradient::after, .neon-btn::after, .neon-btn-alt::after, .btn-primary::after {
+.btn-glow::after,
+.btn-gradient::after,
+.neon-btn::after,
+.neon-btn-alt::after,
+.btn-primary::after {
   content: "";
   position: absolute;
   top: 0;
@@ -595,12 +629,17 @@ a:focus .course-img-icon {
   background: linear-gradient(120deg, rgba(255, 255, 255, 0), transparent);
   transform: skewX(-25deg);
 }
-.btn-glow:hover::after, .btn-gradient:hover::after,
-.neon-btn:hover::after, .neon-btn-alt:hover::after, .btn-primary:hover::after {
+.btn-glow:hover::after,
+.btn-gradient:hover::after,
+.neon-btn:hover::after,
+.neon-btn-alt:hover::after,
+.btn-primary:hover::after {
   animation: shine 0.75s forwards;
 }
 @keyframes shine {
-  100% { left: 125%; }
+  100% {
+    left: 125%;
+  }
 }
 
 /* Typed text fade-in each update */
@@ -608,6 +647,10 @@ a:focus .course-img-icon {
   animation: fadeInTyped 1s ease;
 }
 @keyframes fadeInTyped {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
