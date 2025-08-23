@@ -1,15 +1,27 @@
-// Staggered cards
+// Bidirectional staggered animations
 const staggerCards = document.querySelectorAll(".stagger-fade");
 const cardObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add("visible"), i * 150);
-        cardObserver.unobserve(entry.target);
+        // Animate in when scrolling down
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+          entry.target.classList.remove("hidden");
+        }, i * 150);
+      } else {
+        // Animate out when scrolling back up
+        setTimeout(() => {
+          entry.target.classList.remove("visible");
+          entry.target.classList.add("hidden");
+        }, i * 100);
       }
     });
   },
-  { threshold: 0.2 }
+  { 
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px" // Trigger slightly before element comes into view
+  }
 );
 
 staggerCards.forEach((card) => cardObserver.observe(card));
