@@ -513,11 +513,19 @@ a:focus .course-img-icon {
     font-size: 0.98rem;
     margin-bottom: 18px;
   }
+  
+  .about-card-wrapper::before {
+    border-radius: 18px;
+  }
 }
 
 @media (max-width: 767px) {
   .about-card {
     margin-bottom: 18px;
+  }
+  
+  .about-card-wrapper::before {
+    border-radius: 16px;
   }
 }
 

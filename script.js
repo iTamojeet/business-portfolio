@@ -42,3 +42,80 @@ const options = {
   loop: true,
 };
 const typed = new Typed(typedText, options);
+
+// EmailJS Configuration and Form Handling
+(function() {
+  // Initialize EmailJS with your public key
+  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+  
+  // Form submission handler
+  window.handleQuery = function(event) {
+    event.preventDefault();
+    
+    // Get form elements
+    const form = event.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-1"></i>Sending...';
+    submitBtn.disabled = true;
+    
+    // Get form data
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value || 'Feedback from MakeCodeEasy Portfolio Website',
+      message: document.getElementById('message').value
+    };
+    
+    // Send email using EmailJS
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      to_email: 'makecodeeasy.in@gmail.com',
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      reply_to: formData.email
+    })
+    .then(function(response) {
+      // Success
+      showNotification('Message sent successfully! We\'ll get back to you soon...😊', 'success');
+      form.reset();
+    })
+    .catch(function(error) {
+      // Error
+      showNotification('Failed to send message. Please try again or contact us directly.', 'error');
+      console.error('EmailJS Error:', error);
+    })
+    .finally(function() {
+      // Reset button
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+    });
+    
+    return false;
+  };
+  
+  // Notification function
+  function showNotification(message, type) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
+    notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+    notification.innerHTML = `
+      ${message}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 5000);
+  }
+})();
