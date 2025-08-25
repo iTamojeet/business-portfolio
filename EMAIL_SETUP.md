@@ -17,60 +17,27 @@ This setup uses EmailJS to send feedback form submissions directly to your makec
 4. Configure with your makecodeeasy.in@gmail.com credentials
 5. Note down the **Service ID** (e.g., `service_abc123`)
 
-### 3. Create Email Template
+### 3. Create Email Template (Plain Text, no HTML)
 1. Go to "Email Templates"
 2. Click "Create New Template"
-3. Use this template:
+3. Use this template with plain text only (no HTML):
 
 **Subject:**
 ```
 {{subject}} - MakeCodeEasy Feedback
 ```
 
-**Body:**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: #43e97b; color: white; padding: 20px; text-align: center; }
-        .content { padding: 20px; background: #f9f9f9; }
-        .field { margin-bottom: 15px; }
-        .label { font-weight: bold; color: #333; }
-        .value { color: #666; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h2>New Feedback from MakeCodeEasy Website</h2>
-        </div>
-        <div class="content">
-            <div class="field">
-                <div class="label">Name:</div>
-                <div class="value">{{from_name}}</div>
-            </div>
-            <div class="field">
-                <div class="label">Email:</div>
-                <div class="value">{{from_email}}</div>
-            </div>
-            <div class="field">
-                <div class="label">Subject:</div>
-                <div class="value">{{subject}}</div>
-            </div>
-            <div class="field">
-                <div class="label">Message:</div>
-                <div class="value">{{message}}</div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+**Body (Plain Text):**
+```
+Name: {{from_name}}
+Email: {{from_email}}
+Subject: {{subject}}
+Message:
+{{message}}
 ```
 
-4. Save the template and note down the **Template ID** (e.g., `template_xyz789`)
+4. Set the recipient in your service to `makecodeeasy.in@gmail.com` (or keep `to_email` in the payload as currently used in `script.js`).
+5. Save the template and note down the **Template ID** (e.g., `template_xyz789`).
 
 ### 4. Get Public Key
 1. Go to "Account" → "API Keys"
@@ -112,10 +79,9 @@ emailjs.send('service_xyz789', 'template_feedback123', {
 - Disabled button during submission
 
 ### ✅ Email Features
-- Professional HTML email template
+- Plain text email (no HTML)
 - Reply-to set to sender's email
 - All form fields included in email
-- Branded with MakeCodeEasy styling
 
 ### ✅ Error Handling
 - Network error handling
