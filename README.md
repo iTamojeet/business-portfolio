@@ -26,12 +26,12 @@ We are a passionate team of developers, designers, and educators dedicated to ma
 
 ## 📚 Blog & Tutorials
 
-Explore our [blog](#) for the latest tips, guides, and industry insights.
+Explore our [blog](www.makecodeeasy.in) for the latest tips, guides, and industry insights.
 
 ## 📬 Contact
 
 Have a project in mind or want to collaborate?  
-Email us at [contact@makecodeeasy.com](mailto:contact@makecodeeasy.com)
+Email us at [makecodeeasy.in@gmail.com](mailto:makecodeeasy.in@gmail.com)
 
 ---
 
