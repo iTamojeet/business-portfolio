@@ -45,11 +45,6 @@ body {
   z-index: 1;
 }
 
-h1.display-9 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem); /* auto scales */
-  white-space: nowrap; /* prevents line break */
-}
-
 #home .container {
   position: relative;
   z-index: 2;
