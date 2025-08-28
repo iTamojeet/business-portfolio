@@ -792,7 +792,7 @@ a:focus .course-img-icon {
   margin: 1rem 0;
   border-radius: 12px;
   line-height: 1.6;
-  white-space: inherit;
+  white-space: nowrap;
 }
 
 /* Social Icons Container */
