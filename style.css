@@ -59,7 +59,7 @@ h1.display-9 {
 
 /* Force single line only on larger screens */
 @media (min-width: 992px) {
-  h1.display-7 {
+  h1.display-9 {
     white-space: nowrap;
   }
 }
