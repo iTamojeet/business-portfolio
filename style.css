@@ -787,7 +787,7 @@ a:focus .course-img-icon {
 
 /* Founder Message Box */
 .founder-box .text-light.small {
-  font-size: clamp(0.9rem, 2.3vw, 1.08rem) !important;
+  font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
   padding: 1.5rem !important;
   margin: 1rem 0;
   border-radius: 12px;
