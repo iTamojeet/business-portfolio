@@ -50,7 +50,7 @@ body {
   z-index: 2;
 }
 
-h1.display-7 {
+h1.display-9 {
   font-size: clamp(1.2rem, 3vw, 2.5rem);
   text-align: center; /* keeps it neat on all devices */
   white-space: normal; /* allow wrapping on small screens */
