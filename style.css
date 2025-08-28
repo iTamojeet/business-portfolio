@@ -324,8 +324,6 @@ a:focus .course-img-icon {
   filter: brightness(1.1) contrast(1.1);
 }
 
-
-
 /* Section Headers */
 .section-header {
   position: relative;
@@ -370,7 +368,8 @@ a:focus .course-img-icon {
 .form-control:focus {
   background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%) !important;
   border-color: rgba(67, 233, 123, 0.6) !important;
-  box-shadow: 0 0 20px rgba(67, 233, 123, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 20px rgba(67, 233, 123, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
   color: #ffffff !important;
   transform: translateY(-1px);
 }
@@ -513,7 +512,7 @@ a:focus .course-img-icon {
     font-size: 0.98rem;
     margin-bottom: 18px;
   }
-  
+
   .about-card-wrapper::before {
     border-radius: 18px;
   }
@@ -523,7 +522,7 @@ a:focus .course-img-icon {
   .about-card {
     margin-bottom: 18px;
   }
-  
+
   .about-card-wrapper::before {
     border-radius: 16px;
   }
@@ -706,4 +705,222 @@ a:focus .course-img-icon {
 .col-6.col-md-3.text-center:hover {
   background: rgba(67, 233, 123, 0.05);
   transform: translateY(-2px);
+}
+
+/* ===== Wiki Section Mobile Responsive Fixes ===== */
+
+/* Base Wiki Section */
+#wiki {
+  padding: 3rem 0;
+}
+
+/* Typography Responsive Scaling */
+.about-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 1rem 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.about-title .highlight {
+  color: #f1c40f;
+}
+
+#typed-text {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+/* Founder Box Responsive */
+.founder-box {
+  margin: 1.5rem auto;
+  padding: 2rem 1.5rem;
+  max-width: 100%;
+  background: #000000;
+  border-radius: 20px;
+  box-shadow: 0 0 32px 0 #43e97b, 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Founder Photo Responsive */
+.founder-photo {
+  width: clamp(120px, 20vw, 160px);
+  height: clamp(120px, 20vw, 160px);
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgb(242, 0, 255), inset 0 0 20px rgba(0, 242, 254, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+/* Founder Box Text Scaling */
+.founder-box h4 {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin-bottom: 0.5rem;
+}
+
+.founder-box h5 {
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+  margin-bottom: 1rem;
+}
+
+.founder-box h6 {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  margin-bottom: 0.75rem;
+}
+
+.founder-box p {
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.founder-box ul li {
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+/* Founder Message Box */
+.founder-box .text-light.small {
+  font-size: clamp(0.9rem, 2.3vw, 1.08rem) !important;
+  padding: 1.5rem !important;
+  margin: 1rem 0;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+
+/* Social Icons Container */
+.founder-box .d-flex.justify-content-center {
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding: 0.5rem;
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+  #wiki {
+    padding: 2rem 0;
+  }
+
+  .founder-box {
+    margin: 1rem 0.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .about-badge {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    margin-bottom: 1rem;
+  }
+
+  .about-title {
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  /* Compact spacing for mobile */
+  .founder-box hr {
+    margin: 1rem 0;
+  }
+
+  .founder-box ul {
+    margin-bottom: 1rem;
+  }
+
+  .founder-box ul li {
+    padding: 0.2rem 0;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Message box mobile optimization */
+  .founder-box .text-light.small {
+    padding: 1rem !important;
+    margin: 0.75rem 0;
+  }
+
+  /* Social icons mobile */
+  .founder-box .d-flex.justify-content-center {
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .social-icon {
+    padding: 0.25rem;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .founder-box {
+    margin: 0.5rem 0.25rem;
+    padding: 1.25rem 0.75rem;
+    border-radius: 14px;
+  }
+
+  .about-title {
+    margin: 0.25rem 0 0.75rem 0;
+  }
+
+  .founder-photo {
+    margin-bottom: 0.75rem;
+  }
+
+  .founder-box hr {
+    margin: 0.75rem 0;
+  }
+
+  .founder-box .text-light.small {
+    padding: 0.75rem !important;
+    margin: 0.5rem 0;
+  }
+
+  .social-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Mobile/Small Tablet */
+@media (min-width: 769px) and (max-width: 991px) {
+  .founder-box {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* Ensure text remains readable */
+@media (max-width: 576px) {
+  .founder-box p,
+  .founder-box ul li,
+  .founder-box .text-light.small {
+    text-align: left;
+  }
+
+  .founder-box h4,
+  .founder-box h5,
+  .founder-box h6 {
+    text-align: center;
+  }
+}
+
+/* Fix container padding on very small screens */
+@media (max-width: 360px) {
+  #wiki .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .founder-box {
+    margin: 0.25rem 0;
+    padding: 1rem 0.5rem;
+  }
 }
