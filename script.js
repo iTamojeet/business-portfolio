@@ -18,9 +18,9 @@ const cardObserver = new IntersectionObserver(
       }
     });
   },
-  { 
+  {
     threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px" // Trigger slightly before element comes into view
+    rootMargin: "0px 0px -50px 0px", // Trigger slightly before element comes into view
   }
 );
 
