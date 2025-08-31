@@ -17,7 +17,7 @@ body {
 /* Home Section with Professional Gradient */
 #home {
   background: #000000;
-  min-height: 90vh;
+  min-height: 119vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -944,17 +944,11 @@ a:focus .course-img-icon {
 /* Background video styling */
 .bg-video {
   position: absolute;
-  top: 0;
+  top: 70px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 70px);
   object-fit: cover;
   z-index: 0;
-  opacity: 0.35; /* adjust for visibility */
-}
-
-/* Keep content above video */
-#home .container {
-  position: relative;
-  z-index: 2;
+  opacity: 0.69; /* adjust for visibility */
 }
