@@ -32,6 +32,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  /*
   background: radial-gradient(
       circle at 20% 80%,
       rgba(9, 6, 167, 0.349) 0%,
@@ -42,6 +43,7 @@ body {
       rgba(141, 10, 86, 0.384) 0%,
       transparent 50%
     );
+    */
   z-index: 1;
 }
 
